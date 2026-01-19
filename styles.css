@@ -1,0 +1,560 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #d4af37;
+    --secondary-color: #8b7355;
+    --text-color: #333;
+    --light-text: #666;
+    --white: #ffffff;
+    --overlay: rgba(0, 0, 0, 0.4);
+}
+
+body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Hero Section */
+.hero {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    background-image: url('images/novios.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    filter: grayscale(100%);
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--overlay);
+    z-index: 1;
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2;
+    color: var(--white);
+    width: 90%;
+    max-width: 800px;
+}
+
+.hero-names {
+    font-size: 4rem;
+    font-weight: 300;
+    letter-spacing: 8px;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-date {
+    font-size: 1.5rem;
+    letter-spacing: 4px;
+    font-weight: 300;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Countdown Section */
+.countdown-section {
+    background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+    padding: 3rem 1rem;
+    text-align: center;
+}
+
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 80px;
+    padding: 1rem;
+    background: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.countdown-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+    font-family: 'Arial', sans-serif;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.countdown-label {
+    font-size: 0.9rem;
+    color: var(--light-text);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Info Sections */
+.info-section {
+    display: flex;
+    flex-direction: column;
+    min-height: 500px;
+    background: var(--white);
+}
+
+.info-section.reverse {
+    /* En móvil queremos siempre imagen primero y texto después.
+       El efecto inverso solo se aplicará en pantallas grandes (ver media query). */
+    flex-direction: column;
+}
+
+.section-image {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+}
+
+.section-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.section-image:hover img {
+    transform: scale(1.05);
+}
+
+.section-content {
+    padding: 3rem 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.section-divider {
+    width: 60px;
+    height: 2px;
+    border: none;
+    background: var(--primary-color);
+    margin: 0 auto 1.5rem auto;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: 300;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.section-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    text-align: justify;
+}
+
+.section-details {
+    font-size: 1rem;
+    color: var(--light-text);
+    line-height: 1.8;
+    background: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.section-details strong {
+    color: var(--secondary-color);
+}
+
+.section-details .map-link,
+.section-details .form-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 1px solid var(--primary-color);
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.section-details .map-link:hover,
+.section-details .form-link:hover {
+    color: var(--secondary-color);
+    border-bottom-color: var(--secondary-color);
+}
+
+/* Información Útil Section */
+.info-useful-section {
+    background: #f9f9f9;
+    padding: 4rem 2rem;
+}
+
+.info-useful-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.info-useful-section .section-title {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.info-useful-section .section-divider {
+    margin-bottom: 3rem;
+}
+
+.info-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.info-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-top: 3px solid var(--primary-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.info-card-title {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.info-card-text {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text-color);
+}
+
+/* Regalos Section */
+.gifts-section {
+    background: var(--white);
+    padding: 4rem 2rem;
+}
+
+.gifts-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.gifts-section .section-title {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.gifts-section .section-divider {
+    margin-bottom: 2rem;
+}
+
+.gifts-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-color);
+    margin-bottom: 2.5rem;
+    text-align: justify;
+}
+
+.bank-info {
+    background: #f9f9f9;
+    padding: 2rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.iban-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.iban-label {
+    font-size: 1rem;
+    color: var(--light-text);
+    font-weight: 500;
+}
+
+.iban-value {
+    font-size: 1.2rem;
+    font-family: 'Courier New', monospace;
+    color: var(--secondary-color);
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 0.5rem 1rem;
+    background: var(--white);
+    border-radius: 4px;
+    border: 1px solid #e0e0e0;
+}
+
+.copy-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    background: var(--primary-color);
+    color: var(--white);
+    border: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    font-family: 'Georgia', serif;
+}
+
+.copy-btn:hover {
+    background: var(--secondary-color);
+    transform: scale(1.05);
+}
+
+.copy-btn:active {
+    transform: scale(0.98);
+}
+
+.copy-icon {
+    font-size: 1rem;
+}
+
+.copy-text {
+    font-size: 0.9rem;
+}
+
+.copy-feedback {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    margin-top: 0.5rem;
+    min-height: 1.5rem;
+    font-style: italic;
+}
+
+.copy-feedback.show {
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Footer */
+.footer {
+    background: #a9bf82;
+    color: #1f2a1c;
+    text-align: center;
+    padding: 3rem 2rem;
+}
+
+.footer p {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.footer-date {
+    font-size: 1rem;
+    opacity: 0.85;
+    letter-spacing: 2px;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .hero-names {
+        font-size: 5rem;
+        letter-spacing: 12px;
+    }
+
+    .hero-date {
+        font-size: 2rem;
+    }
+
+    .countdown-number {
+        font-size: 3rem;
+    }
+
+    .countdown-item {
+        min-width: 120px;
+        padding: 1.5rem;
+    }
+
+    .info-section {
+        flex-direction: row;
+        min-height: 600px;
+    }
+
+    .info-section.reverse {
+        flex-direction: row-reverse;
+    }
+
+    .section-image {
+        width: 50%;
+        height: 600px;
+    }
+
+    .section-content {
+        width: 50%;
+        padding: 4rem 3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .section-divider {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .section-title {
+        text-align: left;
+    }
+
+    .section-text {
+        text-align: left;
+    }
+
+    .info-cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .gifts-text {
+        text-align: center;
+    }
+
+    .iban-container {
+        flex-wrap: nowrap;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-names {
+        font-size: 2.5rem;
+        letter-spacing: 4px;
+    }
+
+    .hero-date {
+        font-size: 1.2rem;
+        letter-spacing: 2px;
+    }
+
+    .countdown-container {
+        gap: 0.8rem;
+    }
+
+    .countdown-item {
+        min-width: 60px;
+        padding: 0.8rem;
+    }
+
+    .countdown-number {
+        font-size: 1.8rem;
+    }
+
+    .countdown-label {
+        font-size: 0.75rem;
+    }
+
+    .section-content {
+        padding: 2rem 1.5rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .section-text {
+        font-size: 1rem;
+    }
+
+    .info-useful-section {
+        padding: 3rem 1.5rem;
+    }
+
+    .info-card {
+        padding: 1.5rem;
+    }
+
+    .info-card-title {
+        font-size: 1.3rem;
+    }
+
+    .gifts-section {
+        padding: 3rem 1.5rem;
+    }
+
+    .gifts-text {
+        font-size: 1rem;
+    }
+
+    .iban-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .iban-value {
+        font-size: 0.95rem;
+        text-align: center;
+        word-break: break-all;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .copy-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Placeholder para imágenes faltantes */
+.section-image img[src*="images/"] {
+    background: linear-gradient(135deg, #e0e0e0 0%, #f5f5f5 100%);
+}

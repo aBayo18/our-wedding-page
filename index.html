@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Boda de Ángel y Erika - 17 de octubre de 2026">
+    <title>Ángel y Erika - Nuestra Boda</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Cabecera con foto de novios -->
+    <header class="hero">
+        <div class="hero-image">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1 class="hero-names">Ángel y Erika</h1>
+                <p class="hero-date">17 de octubre de 2026</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contador de días -->
+    <section class="countdown-section">
+        <div class="countdown-container">
+            <div class="countdown-item">
+                <span class="countdown-number" id="months">00</span>
+                <span class="countdown-label">Meses</span>
+            </div>
+            <div class="countdown-item">
+                <span class="countdown-number" id="days">00</span>
+                <span class="countdown-label">Días</span>
+            </div>
+            <div class="countdown-item">
+                <span class="countdown-number" id="hours">00</span>
+                <span class="countdown-label">Horas</span>
+            </div>
+            <div class="countdown-item">
+                <span class="countdown-number" id="minutes">00</span>
+                <span class="countdown-label">Minutos</span>
+            </div>
+            <div class="countdown-item">
+                <span class="countdown-number" id="seconds">00</span>
+                <span class="countdown-label">Segundos</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Lugar -->
+    <section class="info-section">
+        <div class="section-image">
+            <img src="images/lugar.jpg" alt="Lugar de la celebración">
+        </div>
+        <div class="section-content">
+            <h2 class="section-title">Lugar</h2>
+            <hr class="section-divider">
+            <p class="section-text">
+                Nos encantaría compartir este día especial contigo en un lugar único y lleno de magia. 
+                La celebración tendrá lugar en una hermosa finca rodeada de naturaleza, donde crearemos 
+                recuerdos inolvidables juntos.
+            </p>
+            <p class="section-details">
+                <strong>Dirección:</strong> Torre La Mina (Alquerías del Niño Perdido, Castellón)<br>
+                <strong>Cómo llegar:</strong> <a href="https://maps.app.goo.gl/XUp2CwsWqKUNVGP26" target="_blank" rel="noopener noreferrer" class="map-link">Abrir en Google Maps</a>
+            </p>
+        </div>
+    </section>
+
+    <!-- Sección Fecha -->
+    <section class="info-section reverse">
+        <div class="section-image">
+            <img src="images/fecha.png" alt="Fecha de la celebración">
+        </div>
+        <div class="section-content">
+            <h2 class="section-title">Fecha</h2>
+            <hr class="section-divider">
+            <p class="section-text">
+                El 17 de octubre de 2026 será un día muy especial para nosotros. 
+                Después de tanto tiempo esperando este momento, finalmente llegó el día 
+                de decir "sí, quiero" y comenzar nuestra nueva vida juntos.
+            </p>
+            <p class="section-details">
+                <strong>Día:</strong> Sábado, 17 de octubre de 2026<br>
+                <strong>Ceremonia:</strong> 13:00h<br>
+            </p>
+        </div>
+    </section>
+
+    <!-- Sección Confirmación -->
+    <section class="info-section">
+        <div class="section-image">
+            <img src="images/confirmacion.png" alt="Confirmación de asistencia">
+        </div>
+        <div class="section-content">
+            <h2 class="section-title">Confirmación</h2>
+            <hr class="section-divider">
+            <p class="section-text">
+                Tu presencia es muy importante para nosotros. Por favor, confirma tu asistencia 
+                cuanto antes en el siguiente formulario para que podamos organizar todo perfectamente.
+            </p>
+            <p class="section-details">
+                <a href="" target="_blank" rel="noopener noreferrer" class="form-link">Confirma tu asistencia - Formulario</a><br>
+            </p>
+        </div>
+    </section>
+
+    <!-- Sección Información Útil -->
+    <section class="info-useful-section">
+        <div class="info-useful-container">
+            <h2 class="section-title">Información Útil</h2>
+            <hr class="section-divider">
+            <div class="info-cards">
+                <div class="info-card">
+                    <h3 class="info-card-title">Autobuses</h3>
+                    <p class="info-card-text">
+                        Servicio de ida y vuelta: Estación de autobuses de Castellón ↔ Torre La Mina.
+                    </p>
+                </div>
+                <div class="info-card">
+                    <h3 class="info-card-title">Aparcamiento</h3>
+                    <p class="info-card-text">
+                        Si vienes en coche, la finca dispone de parking privado y gratuito para todos los invitados.
+                    </p>
+                </div>
+                <div class="info-card">
+                    <h3 class="info-card-title">Pirotecnia</h3>
+                    <p class="info-card-text">
+                        Por motivos de seguridad y normativa, los fuegos artificiales están gestionados exclusivamente por especialistas. No está permitido el uso particular de pirotecnia dentro del recinto.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Regalos -->
+    <section class="gifts-section">
+        <div class="gifts-container">
+            <h2 class="section-title">Un detalle</h2>
+            <hr class="section-divider">
+            <p class="gifts-text">
+                Vuestra presencia es nuestro mayor regalo y lo único que deseamos es celebrar este día con vosotros. 
+                No obstante, si deseáis tener un detalle con nosotros, podéis hacerlo en la siguiente cuenta:
+            </p>
+            <div class="bank-info">
+                <div class="iban-container">
+                    <span class="iban-label">IBAN:</span>
+                    <span class="iban-value" id="iban">ES00 0000 0000 0000 0000 0000</span>
+                    <button class="copy-btn" id="copyBtn" aria-label="Copiar IBAN al portapapeles">
+                        <span class="copy-icon">📋</span>
+                        <span class="copy-text">Copiar</span>
+                    </button>
+                </div>
+                <p class="copy-feedback" id="copyFeedback"></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer class="footer">
+        <p>628519380 (Ángel) - 676528474 (Erika) <br></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
