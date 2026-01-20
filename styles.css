@@ -216,23 +216,14 @@ body {
 }
 
 /* Información Útil Section */
-.info-useful-section {
+/* Información Útil Section */
+.info-section.info-useful-section {
     background: #f9f9f9;
-    padding: 4rem 2rem;
 }
 
 .info-useful-container {
     max-width: 1200px;
     margin: 0 auto;
-}
-
-.info-useful-section .section-title {
-    text-align: center;
-    margin-bottom: 1rem;
-}
-
-.info-useful-section .section-divider {
-    margin-bottom: 3rem;
 }
 
 .info-cards {
@@ -271,20 +262,14 @@ body {
 }
 
 /* Regalos Section */
-.gifts-section {
+.info-section.gifts-section {
     background: var(--white);
-    padding: 4rem 2rem;
 }
 
 .gifts-container {
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
-}
-
-.gifts-section .section-title {
-    text-align: center;
-    margin-bottom: 1rem;
 }
 
 .gifts-section .section-divider {
@@ -464,7 +449,7 @@ body {
     }
 
     .info-cards {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .gifts-text {
