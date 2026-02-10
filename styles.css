@@ -261,8 +261,9 @@ body {
     color: var(--text-color);
 }
 
-/* Regalos Section */
+/* Regalos Section - Ocultada de momento (quitar display:none para mostrar) */
 .info-section.gifts-section {
+    display: none !important;
     background: var(--white);
 }
 
@@ -582,7 +583,7 @@ body {
             opacity: 1;
         }
         50% {
-            opacity: 0.82;
+            opacity: 0.80;
         }
     }
 
