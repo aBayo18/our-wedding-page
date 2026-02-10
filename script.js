@@ -1,3 +1,21 @@
+// ===== Pantalla de bienvenida (solo móviles) =====
+(function initWelcomeOverlay() {
+    const welcomeOverlay = document.getElementById('welcome-overlay');
+    const mobileQuery = window.matchMedia('(max-width: 768px)');
+
+    if (!welcomeOverlay || !mobileQuery.matches) return;
+
+    document.body.classList.add('welcome-overlay-visible');
+
+    welcomeOverlay.addEventListener('click', function dismissOverlay() {
+        welcomeOverlay.classList.add('welcome-overlay--hiding');
+        setTimeout(function () {
+            welcomeOverlay.style.display = 'none';
+            document.body.classList.remove('welcome-overlay-visible');
+        }, 500);
+    }, { once: true });
+})();
+
 // Fecha objetivo: 17 de octubre de 2026
 const targetDate = new Date('2026-10-17T12:00:00').getTime();
 
