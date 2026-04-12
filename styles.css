@@ -482,18 +482,32 @@ body {
 }
 
 @media (max-width: 480px) {
+    .hero-image {
+        background-image: url('images/PortadaMovil.jpg');
+        background-position: center top;
+    }
+
     .hero-names {
-        font-size: 2rem;
+        font-size: 2.4rem;
         letter-spacing: 2px;
-        left: 4%;
         white-space: normal;
+        text-align: center;
+        /* En torno a 3/4 de la imagen, justo encima de la fecha */
+        top: auto;
+        bottom: calc(5% + 3rem + 1rem);
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
     }
 
     .hero-date {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
         letter-spacing: 1px;
-        left: 4%;
-        bottom: 4%;
+        text-align: center;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 5%;
+        white-space: nowrap;
     }
 
     .countdown-container {
