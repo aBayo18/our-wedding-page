@@ -1,3 +1,11 @@
+@font-face {
+    font-family: 'Amsterdam One';
+    src: url('fonts/Amsterdam One 400.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -31,12 +39,12 @@ body {
 .hero-image {
     width: 100%;
     height: 100%;
-    background-image: url('images/novios.jpg');
+    background-image: url('images/novios2.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
-    filter: grayscale(100%);
+    filter: none;
 }
 
 .hero-overlay {
@@ -51,30 +59,41 @@ body {
 
 .hero-content {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     z-index: 2;
     color: var(--white);
-    width: 90%;
-    max-width: 800px;
 }
 
 .hero-names {
-    font-size: 4rem;
-    font-weight: 300;
-    letter-spacing: 8px;
-    margin-bottom: 1rem;
-    text-transform: uppercase;
+    font-family: 'Amsterdam One', 'Georgia', serif;
+    font-size: 5rem;
+    font-weight: 400;
+    letter-spacing: 4px;
+    text-transform: none;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    white-space: nowrap;
+    line-height: 1.1;
+    /* Centrado vertical, alineado a la izquierda */
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
 }
 
 .hero-date {
-    font-size: 1.5rem;
-    letter-spacing: 4px;
-    font-weight: 300;
+    font-family: 'Amsterdam One', 'Georgia', serif;
+    font-size: 2rem;
+    letter-spacing: 2px;
+    font-weight: 400;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    line-height: 1.2;
+    /* Esquina inferior izquierda */
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
 }
 
 /* Countdown Section */
@@ -397,12 +416,12 @@ body {
 /* Responsive Design */
 @media (min-width: 768px) {
     .hero-names {
-        font-size: 5rem;
-        letter-spacing: 12px;
+        font-size: 6rem;
+        letter-spacing: 4px;
     }
 
     .hero-date {
-        font-size: 2rem;
+        font-size: 2.2rem;
     }
 
     .countdown-number {
@@ -464,13 +483,17 @@ body {
 
 @media (max-width: 480px) {
     .hero-names {
-        font-size: 2.5rem;
-        letter-spacing: 4px;
+        font-size: 2rem;
+        letter-spacing: 2px;
+        left: 4%;
+        white-space: normal;
     }
 
     .hero-date {
         font-size: 1.2rem;
-        letter-spacing: 2px;
+        letter-spacing: 1px;
+        left: 4%;
+        bottom: 4%;
     }
 
     .countdown-container {
