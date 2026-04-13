@@ -492,9 +492,8 @@ body {
         letter-spacing: 2px;
         white-space: normal;
         text-align: center;
-        /* En torno a 3/4 de la imagen, justo encima de la fecha */
-        top: auto;
-        bottom: calc(5% + 3rem + 1rem);
+        top: 8%;
+        bottom: auto;
         left: 50%;
         transform: translateX(-50%);
         width: 90%;
@@ -506,7 +505,8 @@ body {
         text-align: center;
         left: 50%;
         transform: translateX(-50%);
-        bottom: 5%;
+        top: calc(8% + 3.5rem + 2rem);
+        bottom: auto;
         white-space: nowrap;
     }
 
