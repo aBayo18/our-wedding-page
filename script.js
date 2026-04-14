@@ -2,6 +2,9 @@
 (function initWelcomeOverlay() {
     const welcomeOverlay = document.getElementById('welcome-overlay');
     const mobileQuery = window.matchMedia('(max-width: 768px)');
+    const OPENING_DURATION_MS = 3350;
+    const FADE_DURATION_MS = 780;
+    const HIDE_DELAY_MS = OPENING_DURATION_MS - 360;
 
     if (!welcomeOverlay || !mobileQuery.matches) return;
 
@@ -11,11 +14,11 @@
         welcomeOverlay.classList.add('welcome-overlay--opening');
         setTimeout(function () {
             welcomeOverlay.classList.add('welcome-overlay--hiding');
-        }, 1150);
+        }, HIDE_DELAY_MS);
         setTimeout(function () {
             welcomeOverlay.style.display = 'none';
             document.body.classList.remove('welcome-overlay-visible');
-        }, 1700);
+        }, HIDE_DELAY_MS + FADE_DURATION_MS);
     }, { once: true });
 })();
 

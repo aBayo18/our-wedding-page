@@ -602,7 +602,7 @@ body {
         cursor: pointer;
         overflow: hidden;
         opacity: 1;
-        transition: opacity 0.5s ease;
+        transition: opacity 0.7s ease;
         perspective: 1400px;
     }
 
@@ -611,7 +611,7 @@ body {
         width: 100vw;
         height: 100vh;
         transform-style: preserve-3d;
-        transition: transform 1s cubic-bezier(0.22, 0.61, 0.36, 1);
+        transition: transform 2.2s cubic-bezier(0.16, 0.82, 0.2, 1);
     }
 
     .welcome-book-left,
@@ -638,10 +638,40 @@ body {
         background-size: 100% auto;
         background-position: center center;
         background-repeat: no-repeat;
-        transform-origin: left center;
+        transform-origin: left 58%;
         backface-visibility: hidden;
-        transition: transform 1.1s cubic-bezier(0.22, 0.61, 0.36, 1);
-        box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25);
+        transform: rotateY(0deg) rotateX(0deg);
+        transition: box-shadow 2.8s ease, filter 2.8s ease;
+        box-shadow: 0 14px 30px rgba(0, 0, 0, 0.2);
+        filter: brightness(1) contrast(1.01) saturate(1.02);
+        overflow: hidden;
+        will-change: transform, box-shadow, filter;
+    }
+
+    .welcome-book-right::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+            linear-gradient(90deg, rgba(15, 10, 6, 0.2) 0%, rgba(15, 10, 6, 0.08) 10%, rgba(255, 255, 255, 0) 30%),
+            linear-gradient(130deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0.04) 35%, rgba(0, 0, 0, 0) 60%);
+        opacity: 0.34;
+        transform-origin: left center;
+        transition: opacity 2.8s ease;
+        pointer-events: none;
+    }
+
+    .welcome-book-right::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 46%;
+        height: 100%;
+        background: linear-gradient(90deg, rgba(0, 0, 0, 0.24), rgba(0, 0, 0, 0));
+        opacity: 0;
+        transition: opacity 2.8s ease;
+        pointer-events: none;
     }
 
     .welcome-book-hint {
@@ -669,16 +699,27 @@ body {
     }
 
     #welcome-overlay.welcome-overlay--opening .welcome-book-right {
-        transform: rotateY(-172deg);
+        animation: page-fold-wave 3.35s linear forwards;
+        box-shadow: -28px 16px 48px rgba(0, 0, 0, 0.2);
+        filter: brightness(0.965) contrast(1.02) saturate(0.99);
+    }
+
+    #welcome-overlay.welcome-overlay--opening .welcome-book-right::before {
+        opacity: 0.56;
+        animation: page-fold-shimmer 3.35s linear forwards;
+    }
+
+    #welcome-overlay.welcome-overlay--opening .welcome-book-right::after {
+        opacity: 0.58;
     }
 
     #welcome-overlay.welcome-overlay--opening .welcome-book {
-        transform: scale(1.12) translateY(1%);
+        transform: scale(1.018) translateY(0.25%);
     }
 
     #welcome-overlay.welcome-overlay--opening .welcome-book-hint {
         opacity: 0;
-        transition: opacity 0.2s ease;
+        transition: opacity 0.35s ease;
     }
 
     #welcome-overlay.welcome-overlay--hiding {
@@ -687,5 +728,88 @@ body {
 
     body.welcome-overlay-visible {
         overflow: hidden;
+    }
+
+    @keyframes page-fold-wave {
+        0% {
+            transform: translateZ(0) perspective(1800px) rotateY(0deg) rotateX(0deg) rotateZ(0deg) skewY(0deg);
+        }
+        6% {
+            transform: translateZ(0) perspective(1800px) rotateY(-3deg) rotateX(0.08deg) rotateZ(-0.05deg) skewY(-0.03deg);
+        }
+        12% {
+            transform: translateZ(0) perspective(1800px) rotateY(-8deg) rotateX(0.18deg) rotateZ(-0.12deg) skewY(-0.06deg);
+        }
+        18% {
+            transform: translateZ(0) perspective(1800px) rotateY(-14deg) rotateX(0.28deg) rotateZ(-0.2deg) skewY(-0.09deg);
+        }
+        24% {
+            transform: translateZ(0) perspective(1800px) rotateY(-21deg) rotateX(0.35deg) rotateZ(-0.26deg) skewY(-0.12deg);
+        }
+        30% {
+            transform: translateZ(0) perspective(1800px) rotateY(-29deg) rotateX(0.46deg) rotateZ(-0.34deg) skewY(-0.16deg);
+        }
+        36% {
+            transform: translateZ(0) perspective(1800px) rotateY(-37deg) rotateX(0.57deg) rotateZ(-0.42deg) skewY(-0.19deg);
+        }
+        44% {
+            transform: translateZ(0) perspective(1800px) rotateY(-49deg) rotateX(0.68deg) rotateZ(-0.5deg) skewY(-0.22deg);
+        }
+        52% {
+            transform: translateZ(0) perspective(1800px) rotateY(-62deg) rotateX(0.79deg) rotateZ(-0.58deg) skewY(-0.25deg);
+        }
+        60% {
+            transform: translateZ(0) perspective(1800px) rotateY(-76deg) rotateX(0.9deg) rotateZ(-0.66deg) skewY(-0.29deg);
+        }
+        68% {
+            transform: translateZ(0) perspective(1800px) rotateY(-90deg) rotateX(0.99deg) rotateZ(-0.74deg) skewY(-0.32deg);
+        }
+        76% {
+            transform: translateZ(0) perspective(1800px) rotateY(-103deg) rotateX(1.07deg) rotateZ(-0.82deg) skewY(-0.35deg);
+        }
+        84% {
+            transform: translateZ(0) perspective(1800px) rotateY(-114deg) rotateX(1.13deg) rotateZ(-0.89deg) skewY(-0.38deg);
+        }
+        92% {
+            transform: translateZ(0) perspective(1800px) rotateY(-124deg) rotateX(1.18deg) rotateZ(-0.95deg) skewY(-0.4deg);
+        }
+        100% {
+            transform: translateZ(0) perspective(1800px) rotateY(-132deg) rotateX(1.2deg) rotateZ(-1deg) skewY(-0.42deg);
+        }
+    }
+
+    @keyframes page-fold-shimmer {
+        0% {
+            transform: translateX(0) scaleX(1);
+            opacity: 0.3;
+        }
+        12% {
+            transform: translateX(1.2%) scaleX(0.985);
+            opacity: 0.34;
+        }
+        24% {
+            transform: translateX(2.6%) scaleX(0.97);
+            opacity: 0.38;
+        }
+        36% {
+            transform: translateX(4%) scaleX(0.955);
+            opacity: 0.43;
+        }
+        50% {
+            transform: translateX(5.5%) scaleX(0.94);
+            opacity: 0.48;
+        }
+        66% {
+            transform: translateX(7%) scaleX(0.92);
+            opacity: 0.52;
+        }
+        82% {
+            transform: translateX(8.6%) scaleX(0.9);
+            opacity: 0.55;
+        }
+        100% {
+            transform: translateX(10%) scaleX(0.88);
+            opacity: 0.56;
+        }
     }
 }
