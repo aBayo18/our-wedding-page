@@ -687,6 +687,49 @@ body {
         animation: welcome-hint-pulse 1.6s ease-in-out infinite;
     }
 
+    .welcome-tap-indicator {
+        position: absolute;
+        right: 0.25rem;
+        bottom: 0.25rem;
+        display: grid;
+        place-items: center;
+        width: 3.1rem;
+        height: 3.1rem;
+        animation: tap-indicator-float 1.8s ease-in-out infinite;
+        pointer-events: none;
+        z-index: 6;
+    }
+
+    .welcome-tap-indicator-icon {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transform-origin: 50% 90%;
+        animation: tap-indicator-press 1.2s ease-in-out infinite;
+        width: 2.25rem;
+        height: 2.25rem;
+        font-size: 2.25rem;
+        line-height: 1;
+        color: #000;
+        font-family: "Segoe UI Symbol", "Noto Sans Symbols2", sans-serif;
+        font-variant-emoji: text;
+        filter: grayscale(1) contrast(1.15);
+    }
+
+    .welcome-tap-indicator-icon::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 38%;
+        width: 1.4rem;
+        height: 1.4rem;
+        border: 2px solid rgba(0, 0, 0, 0.35);
+        border-radius: 50%;
+        transform: translate(-50%, -50%) scale(0.55);
+        animation: tap-indicator-ring 1.2s ease-out infinite;
+    }
+
     @keyframes welcome-hint-pulse {
         0%, 100% {
             opacity: 0.7;
@@ -720,6 +763,12 @@ body {
     #welcome-overlay.welcome-overlay--opening .welcome-book-hint {
         opacity: 0;
         transition: opacity 0.35s ease;
+    }
+
+    #welcome-overlay.welcome-overlay--opening .welcome-tap-indicator {
+        opacity: 0;
+        transform: translateY(8px) scale(0.92);
+        transition: opacity 0.28s ease, transform 0.28s ease;
     }
 
     #welcome-overlay.welcome-overlay--hiding {
@@ -775,6 +824,41 @@ body {
         }
         100% {
             transform: translateZ(0) perspective(1800px) rotateY(-132deg) rotateX(1.2deg) rotateZ(-1deg) skewY(-0.42deg);
+        }
+    }
+
+    @keyframes tap-indicator-float {
+        0%, 100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-2px);
+        }
+    }
+
+    @keyframes tap-indicator-press {
+        0%, 100% {
+            transform: translateY(0) scale(1);
+        }
+        35% {
+            transform: translateY(2px) scale(0.92);
+        }
+        55% {
+            transform: translateY(0) scale(1);
+        }
+    }
+
+    @keyframes tap-indicator-ring {
+        0% {
+            opacity: 0;
+            transform: translate(-50%, -50%) scale(0.5);
+        }
+        25% {
+            opacity: 0.7;
+        }
+        100% {
+            opacity: 0;
+            transform: translate(-50%, -50%) scale(1.38);
         }
     }
 
