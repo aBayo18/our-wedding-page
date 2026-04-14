@@ -688,10 +688,10 @@ body {
     }
 
     .welcome-tap-indicator {
+        display: none;
         position: absolute;
         right: 0.25rem;
         bottom: 0.25rem;
-        display: grid;
         place-items: center;
         width: 3.1rem;
         height: 3.1rem;
