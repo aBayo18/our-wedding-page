@@ -596,41 +596,93 @@ body {
         width: 100%;
         height: 100%;
         z-index: 99999;
-        background-color: #faf8f5;
+        background-color: transparent;
         align-items: center;
         justify-content: center;
         cursor: pointer;
         overflow: hidden;
         opacity: 1;
-        transform: translateY(0);
-        transition: opacity 0.5s ease, transform 0.5s ease;
+        transition: opacity 0.5s ease;
+        perspective: 1400px;
     }
 
-    #welcome-overlay img {
-        width: 100%;
+    .welcome-book {
+        position: relative;
+        width: 100vw;
         height: 100vh;
-        object-fit: cover;
-        object-position: center center;
-        pointer-events: none;
-        animation: welcome-blink 2s ease-in-out infinite;
+        transform-style: preserve-3d;
+        transition: transform 1s cubic-bezier(0.22, 0.61, 0.36, 1);
     }
 
-    @keyframes welcome-blink {
+    .welcome-book-left,
+    .welcome-book-right {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        pointer-events: none;
+    }
+
+    /* Capa interior transparente para dejar ver la cabecera */
+    .welcome-book-left {
+        left: 0;
+        background: transparent;
+        box-shadow: none;
+    }
+
+    /* Portada completa que se abre desde el eje izquierdo */
+    .welcome-book-right {
+        left: 0;
+        background-image: url('images/invitacionIntro.png');
+        background-size: 100% auto;
+        background-position: center center;
+        background-repeat: no-repeat;
+        transform-origin: left center;
+        backface-visibility: hidden;
+        transition: transform 1.1s cubic-bezier(0.22, 0.61, 0.36, 1);
+        box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25);
+    }
+
+    .welcome-book-hint {
+        position: absolute;
+        left: 50%;
+        bottom: -3.2rem;
+        transform: translateX(-50%);
+        color: #4c4c4c;
+        font-size: 0.95rem;
+        letter-spacing: 1px;
+        white-space: nowrap;
+        text-shadow: none;
+        animation: welcome-hint-pulse 1.6s ease-in-out infinite;
+    }
+
+    @keyframes welcome-hint-pulse {
         0%, 100% {
-            opacity: 1;
+            opacity: 0.7;
+            transform: translateX(-50%) scale(1);
         }
         50% {
-            opacity: 0.80;
+            opacity: 1;
+            transform: translateX(-50%) scale(1.03);
         }
     }
 
-    #welcome-overlay.welcome-overlay--hiding img {
-        animation: none;
+    #welcome-overlay.welcome-overlay--opening .welcome-book-right {
+        transform: rotateY(-172deg);
+    }
+
+    #welcome-overlay.welcome-overlay--opening .welcome-book {
+        transform: scale(1.12) translateY(1%);
+    }
+
+    #welcome-overlay.welcome-overlay--opening .welcome-book-hint {
+        opacity: 0;
+        transition: opacity 0.2s ease;
     }
 
     #welcome-overlay.welcome-overlay--hiding {
         opacity: 0;
-        transform: translateY(40px);
     }
 
     body.welcome-overlay-visible {

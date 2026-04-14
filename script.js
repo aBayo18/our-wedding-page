@@ -8,11 +8,14 @@
     document.body.classList.add('welcome-overlay-visible');
 
     welcomeOverlay.addEventListener('click', function dismissOverlay() {
-        welcomeOverlay.classList.add('welcome-overlay--hiding');
+        welcomeOverlay.classList.add('welcome-overlay--opening');
+        setTimeout(function () {
+            welcomeOverlay.classList.add('welcome-overlay--hiding');
+        }, 1150);
         setTimeout(function () {
             welcomeOverlay.style.display = 'none';
             document.body.classList.remove('welcome-overlay-visible');
-        }, 500);
+        }, 1700);
     }, { once: true });
 })();
 
