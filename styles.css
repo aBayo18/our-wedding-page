@@ -396,21 +396,69 @@ body {
 
 /* Footer */
 .footer {
-    background: #a9bf82;
-    color: #1f2a1c;
+    background: linear-gradient(140deg, #f8f5ef 0%, #f3ecdf 45%, #ede2ce 100%);
+    color: #4c3f2b;
     text-align: center;
-    padding: 3rem 2rem;
+    padding: 2.2rem 1.2rem;
+    border-top: 1px solid rgba(139, 115, 85, 0.25);
 }
 
-.footer p {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
+.footer-content {
+    max-width: 780px;
+    margin: 0 auto;
 }
 
-.footer-date {
+.footer-title {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    color: var(--secondary-color);
+    margin-bottom: 0.35rem;
+    font-weight: 500;
+}
+
+.footer-subtitle {
+    font-size: 0.95rem;
+    color: var(--light-text);
+    margin-bottom: 1rem;
+}
+
+.footer-contacts {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+}
+
+.footer-contact {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
+    border: 1px solid rgba(139, 115, 85, 0.25);
+    background: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.footer-contact:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+    border-color: rgba(212, 175, 55, 0.75);
+}
+
+.footer-contact-name {
     font-size: 1rem;
-    opacity: 0.85;
-    letter-spacing: 2px;
+    font-weight: 600;
+    color: var(--secondary-color);
+}
+
+.footer-contact-phone {
+    font-family: 'Arial', sans-serif;
+    font-size: 0.95rem;
+    letter-spacing: 0.3px;
+    color: #4a4a4a;
 }
 
 /* Responsive Design */
@@ -478,6 +526,22 @@ body {
 
     .iban-container {
         flex-wrap: nowrap;
+    }
+
+    .footer {
+        padding: 2.6rem 1.6rem;
+    }
+
+    .footer-contacts {
+        grid-template-columns: repeat(2, minmax(220px, 1fr));
+    }
+
+    .footer-contact {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        min-height: 88px;
+        gap: 0.35rem;
     }
 }
 
@@ -574,6 +638,26 @@ body {
     .copy-btn {
         width: 100%;
         justify-content: center;
+    }
+
+    .footer {
+        padding: 2rem 0.9rem;
+    }
+
+    .footer-title {
+        font-size: 1.3rem;
+    }
+
+    .footer-subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .footer-contact {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 0.2rem;
     }
 }
 
