@@ -610,7 +610,7 @@ body {
     }
 
     .section-image-confirmacion img {
-        transform: scaleY(1.14);
+        transform: scaleY(1.18);
         transform-origin: center top;
     }
 
