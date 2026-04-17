@@ -575,20 +575,26 @@ body {
     }
 
     .countdown-container {
-        gap: 0.8rem;
+        flex-wrap: nowrap;
+        gap: 0.45rem;
+        align-items: stretch;
     }
 
     .countdown-item {
-        min-width: 60px;
-        padding: 0.8rem;
+        flex: 1 1 0;
+        min-width: 0;
+        padding: 0.75rem 0.35rem;
     }
 
     .countdown-number {
-        font-size: 1.8rem;
+        font-size: 1.95rem;
+        margin-bottom: 0.35rem;
+        line-height: 1;
     }
 
     .countdown-label {
-        font-size: 0.75rem;
+        font-size: 0.68rem;
+        letter-spacing: 0.5px;
     }
 
     .section-content {
