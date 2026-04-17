@@ -23,7 +23,7 @@
 })();
 
 // Fecha objetivo: 17 de octubre de 2026
-const targetDate = new Date('2026-10-17T12:00:00').getTime();
+const targetDate = new Date('2026-10-17T13:00:00').getTime();
 
 // Elementos del contador
 const monthsElement = document.getElementById('months');
