@@ -172,6 +172,17 @@ body {
     transform: scale(1.05);
 }
 
+.section-image-fecha {
+    width: min(100%, 400px);
+    aspect-ratio: 1 / 1;
+    height: auto;
+    margin: 0 auto;
+}
+
+.section-image-fecha img {
+    object-position: center bottom;
+}
+
 .section-content {
     padding: 3rem 2rem;
     max-width: 800px;
@@ -232,6 +243,29 @@ body {
 .section-details .form-link:hover {
     color: var(--secondary-color);
     border-bottom-color: var(--secondary-color);
+}
+
+.map-icon {
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    vertical-align: -0.1em;
+}
+
+.form-icon {
+    width: 1.2em;
+    height: 1.2em;
+    display: inline-block;
+    vertical-align: -0.12em;
+    margin-right: 0.3em;
+}
+
+.hotel-icon {
+    width: 1.2em;
+    height: 1.2em;
+    display: inline-block;
+    vertical-align: -0.1em;
+    margin-right: 0.3em;
 }
 
 /* Información Útil Section */
@@ -493,6 +527,10 @@ body {
     .section-image {
         width: 50%;
         height: 600px;
+    }
+
+    .section-image-fecha {
+        width: min(100%, 600px);
     }
 
     .section-content {
