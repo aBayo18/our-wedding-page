@@ -32,37 +32,22 @@
         </div>
     </header>
 
-    <!-- Contador de días -->
-    <section class="countdown-section">
-        <div class="countdown-container">
-            <div class="countdown-item">
-                <span class="countdown-number" id="months">00</span>
-                <span class="countdown-label">Meses</span>
-            </div>
-            <div class="countdown-item">
-                <span class="countdown-number" id="days">00</span>
-                <span class="countdown-label">Días</span>
-            </div>
-            <div class="countdown-item">
-                <span class="countdown-number" id="hours">00</span>
-                <span class="countdown-label">Horas</span>
-            </div>
-            <div class="countdown-item">
-                <span class="countdown-number" id="minutes">00</span>
-                <span class="countdown-label">Minutos</span>
-            </div>
-            <div class="countdown-item">
-                <span class="countdown-number" id="seconds">00</span>
-                <span class="countdown-label">Segundos</span>
-            </div>
+    <section class="info-section centered-section">
+        <div class="section-content">
+            <h2 class="section-title">¡NOS CASAMOS!</h2>
+            <hr class="section-divider">
+        </div>
+    </section>
+
+    <!-- Imagen del lugar bajo el contador -->
+    <section class="standalone-image-section">
+        <div class="section-image">
+            <img src="images/lugar.jpg" alt="Lugar de la celebración">
         </div>
     </section>
 
     <!-- Sección Lugar -->
-    <section class="info-section">
-        <div class="section-image">
-            <img src="images/lugar.jpg" alt="Lugar de la celebración">
-        </div>
+    <section class="info-section centered-section">
         <div class="section-content">
             <h2 class="section-title">Lugar</h2>
             <hr class="section-divider">
@@ -79,15 +64,36 @@
     </section>
 
     <!-- Sección Fecha -->
-    <section class="info-section reverse">
-        <div class="section-image section-image-fecha">
-            <img src="images/fecha_img.jpeg" alt="Fecha de la celebración">
-        </div>
+    <section class="info-section reverse centered-section">
         <div class="section-content">
             <h2 class="section-title">Fecha</h2>
             <hr class="section-divider">
+            <div class="countdown-section">
+                <div class="countdown-container">
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="months">00</span>
+                        <span class="countdown-label">Meses</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="days">00</span>
+                        <span class="countdown-label">Días</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="hours">00</span>
+                        <span class="countdown-label">Horas</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="minutes">00</span>
+                        <span class="countdown-label">Minutos</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="seconds">00</span>
+                        <span class="countdown-label">Segundos</span>
+                    </div>
+                </div>
+            </div>
             <p class="section-text">
-                Hay historias que se cocinan a fuego lento, y la nuestra lleva ya 13 años llenándose de momentos inolvidables. Este día no marca el inicio de nuestro camino, sino la gran celebración de la vida que ya compartimos y de todo lo que hemos construido juntos día a día. Lo más especial de este paso es, sin duda, poder vivirlo rodeados de las personas que realmente nos importan.
+                Hay historias que se cocinan a fuego lento, y la nuestra lleva ya 13 años llenándose de momentos inolvidables. Este día no marca el inicio de nuestro camino, sino la gran celebración de la vida que ya compartimos, de lo que hemos construido juntos día a día y de todo lo que está por venir. Lo más especial de este paso es, sin duda, poder vivirlo rodeados de las personas que realmente nos importan.
             </p>
             <p class="section-details">
                 <strong>Día:</strong> Sábado, 17 de octubre de 2026<br>
@@ -96,17 +102,19 @@
         </div>
     </section>
 
-    <!-- Sección Confirmación -->
-    <section class="info-section">
-        <div class="section-image section-image-confirmacion">
-            <img src="images/confirmacion.jpg" alt="Confirmación de asistencia">
+    <!-- Banner de confirmación -->
+    <section class="confirm-banner-section">
+        <div class="confirm-banner-image">
+            <img src="images/confirmacion.jpg" alt="Imagen de confirmación">
         </div>
+    </section>
+
+    <!-- Sección Confirmación -->
+    <section class="info-section centered-section">
         <div class="section-content">
             <h2 class="section-title">Confirmación</h2>
             <hr class="section-divider">
-            <p class="section-text">
-                Tu presencia es muy importante para nosotros. Por favor, confirma tu asistencia, menú, autobús...
-                cuanto antes en el siguiente formulario para que podamos organizar todo perfectamente.
+            <p class="section-text">Este día no sería lo mismo sin ti. Por favor, confirma tu asistencia, menú y transporte en el formulario para que podamos prepararlo todo con mucho cariño.
             </p>
             <p class="section-details">
                 <a href="https://forms.gle/J6Jb4pnh2gLP8Bbu5" target="_blank" rel="noopener noreferrer" class="form-link">Confirma tu asistencia - Formulario</a><br>
@@ -115,41 +123,50 @@
     </section>
 
     <!-- Sección Información Útil -->
-    <section class="info-section reverse info-useful-section">
-        <div class="section-image">
-            <img src="images/info-util.jpg" alt="Información útil de la boda">
-        </div>
+    <section class="info-section reverse info-useful-section centered-section">
         <div class="section-content">
             <h2 class="section-title">Información Útil</h2>
             <hr class="section-divider">
             <div class="info-useful-container">
-                <div class="info-cards">
-                    <div class="info-card">
-                        <h3 class="info-card-title">Autobuses</h3>
-                        <p class="info-card-text">
-                            Servicio de ida y vuelta: Estación de autobuses de Castellón ↔ Torre La Mina.<br>
+                <div class="info-useful-list">
+                    <div class="info-useful-item">
+                        <h3 class="info-useful-title">Autobuses</h3>
+                        <p class="info-useful-text">
+                            Para facilitar los desplazamientos, habrá servicio de autobús.<br>
+                            <strong>Castellón (estación de autobuses) ↔ Torre La Mina.</strong><br>
+                            <br>
                             <strong>Ida:</strong> 12:00h<br>
-                            <strong>Vuelta:</strong> 00:30h aprox.
+                            <strong>1ª Vuelta:</strong> 21:00h aprox.<br>
+                            <strong>2ª Vuelta:</strong> 00:30h aprox.
                         </p>
                     </div>
-                    <div class="info-card">
-                        <h3 class="info-card-title">Hotel</h3>
-                        <p class="info-card-text">
-                            En <strong>Hotel Luz</strong> disponéis de un <strong>15% de descuento</strong> con el código <strong>XXXX</strong> al reservar. El hotel dispone de parking; <i>se gestiona a la llegada (check-in).</i> En caso de reserva, agradeceríamos que informarais a Ángel o Erika.<br>
+                    <div class="info-useful-item">
+                        <h3 class="info-useful-title">Hotel</h3>
+                        <p class="info-useful-text">
+                            En <strong>Hotel Luz ****</strong> tenéis un <strong>15% de descuento</strong> usando este código: <strong>ERIKAANGEL1710</strong> en la formalización de la reserva. Está en Carrer del Pintor Oliet, 3, 12006 Castelló de la Plana, justo frente a la estación de tren y autobuses y dispone de parking, que podéis reservar junto con vuestra habitación.<br><br>
+                            <u>CONDICIONES DEL CÓDIGO PROMOCIONAL</u><br>
+                            · 15% de descuento<br>
+                            · Aplicable a reservas confirmadas antes del 17/09/2026<br>
+                            · Válido para los días 16-17-18 de octubre de 2026<br>
+                            · Se puede cancelar hasta 48h antes de la llegada<br><br>
+                            
+                            En caso de reserva, agradeceríamos que informarais a Ángel o Erika.
+                            <br><br>
                             <a href="https://www.hotelluz.com/es" target="_blank" rel="noopener noreferrer" class="map-link">Reserva en Hotel Luz</a><br>
-                            <img src="images/ubi_icon.svg" alt="Ubicación" class="map-icon"> <a href="https://www.google.com/maps/search/?api=1&amp;query=Hotel+Luz+Castell%C3%B3n" target="_blank" rel="noopener noreferrer" class="map-link">Abrir en Google Maps</a>
+                            <img src="images/ubi_icon.svg" alt="Ubicación" class="map-icon"> <a href="https://www.google.com/maps/search/?api=1&amp;query=Hotel+Luz+Castell%C3%B3n" target="_blank" rel="noopener noreferrer" class="map-link">Abrir en Google Maps</a><br><br>
+                            
                         </p>
                     </div>
-                    <div class="info-card">
-                        <h3 class="info-card-title">Aparcamiento</h3>
-                        <p class="info-card-text">
+                    <div class="info-useful-item">
+                        <h3 class="info-useful-title">Aparcamiento</h3>
+                        <p class="info-useful-text">
                             Si vienes en coche, la finca dispone de parking privado y gratuito para todos los invitados.
                         </p>
                     </div>
-                    <div class="info-card">
-                        <h3 class="info-card-title">Pirotecnia</h3>
-                        <p class="info-card-text">
-                            Por motivos de seguridad y normativa, los fuegos artificiales están gestionados exclusivamente por especialistas. No está permitido el uso particular de pirotecnia dentro del recinto.
+                    <div class="info-useful-item">
+                        <h3 class="info-useful-title">Pirotecnia</h3>
+                        <p class="info-useful-text">
+                            Por motivos de seguridad y normativa, los fuegos artificiales deben ser gestionados exclusivamente por pirotécnicos especialistas. No está permitido el uso particular de pirotecnia dentro del recinto.
                         </p>
                     </div>
                 </div>

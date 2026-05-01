@@ -19,6 +19,7 @@
     --light-text: #666;
     --white: #ffffff;
     --overlay: rgba(0, 0, 0, 0.4);
+    --content-region-width: min(46vw, 760px);
 }
 
 body {
@@ -98,8 +99,8 @@ body {
 
 /* Countdown Section */
 .countdown-section {
-    background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
-    padding: 3rem 1rem;
+    background: var(--white);
+    padding: 0.4rem 0.35rem 2rem;
     text-align: center;
 }
 
@@ -134,17 +135,49 @@ body {
 }
 
 .countdown-label {
-    font-size: 0.9rem;
+    font-size: 0.84rem;
     color: var(--light-text);
     text-transform: uppercase;
     letter-spacing: 1px;
+}
+
+.standalone-image-section {
+    background: var(--white);
+    display: flex;
+    justify-content: center;
+    padding: 0 1rem;
+}
+
+.standalone-image-section .section-image {
+    width: min(100%, 920px);
+    height: 340px;
+}
+
+.confirm-banner-section {
+    background: var(--white);
+    display: flex;
+    justify-content: center;
+    padding: 0 1rem;
+}
+
+.confirm-banner-image {
+    width: min(100%, 920px);
+    height: 96px;
+    overflow: hidden;
+}
+
+.confirm-banner-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 54%;
 }
 
 /* Info Sections */
 .info-section {
     display: flex;
     flex-direction: column;
-    min-height: 500px;
+    min-height: auto;
     background: var(--white);
 }
 
@@ -184,10 +217,19 @@ body {
 }
 
 .section-content {
-    padding: 3rem 2rem;
+    padding: 1.75rem 1.5rem;
     max-width: 800px;
     margin: 0 auto;
     width: 100%;
+}
+
+.centered-section {
+    min-height: auto;
+}
+
+.centered-section .section-content {
+    width: 100%;
+    max-width: 920px;
 }
 
 .section-divider {
@@ -275,40 +317,36 @@ body {
 }
 
 .info-useful-container {
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
 }
 
-.info-cards {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    margin-top: 2rem;
+.info-useful-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    margin-top: 0.75rem;
 }
 
-.info-card {
-    background: var(--white);
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    border-top: 3px solid var(--primary-color);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.info-useful-item {
+    padding: 0 0 0.85rem 0;
+    border-bottom: 1px solid rgba(139, 115, 85, 0.25);
 }
 
-.info-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+.info-useful-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
 }
 
-.info-card-title {
-    font-size: 1.5rem;
+.info-useful-title {
+    font-size: 1.35rem;
     color: var(--secondary-color);
-    margin-bottom: 1rem;
+    margin-bottom: 0.65rem;
     font-weight: 400;
     letter-spacing: 1px;
 }
 
-.info-card-text {
+.info-useful-text {
     font-size: 1rem;
     line-height: 1.8;
     color: var(--text-color);
@@ -506,22 +544,39 @@ body {
         font-size: 2.2rem;
     }
 
+    .countdown-container {
+        flex-wrap: nowrap;
+        gap: 0.9rem;
+    }
+
     .countdown-number {
         font-size: 3rem;
     }
 
     .countdown-item {
-        min-width: 120px;
-        padding: 1.5rem;
+        flex: 1 1 0;
+        min-width: 0;
+        padding: 1rem 0.6rem;
+    }
+
+    .standalone-image-section .section-image {
+        width: var(--content-region-width);
+        height: 380px;
     }
 
     .info-section {
         flex-direction: row;
-        min-height: 600px;
+        min-height: auto;
     }
 
     .info-section.reverse {
         flex-direction: row-reverse;
+    }
+
+    .centered-section,
+    .centered-section.reverse {
+        flex-direction: column;
+        align-items: center;
     }
 
     .section-image {
@@ -535,10 +590,21 @@ body {
 
     .section-content {
         width: 50%;
-        padding: 4rem 3rem;
+        padding: 2rem 1.5rem;
         display: flex;
         flex-direction: column;
         justify-content: center;
+    }
+
+    .centered-section .section-content {
+        width: 100%;
+        max-width: var(--content-region-width);
+        padding: 2rem 1rem;
+    }
+
+    .confirm-banner-image {
+        width: var(--content-region-width);
+        height: 108px;
     }
 
     .section-divider {
@@ -554,8 +620,19 @@ body {
         text-align: left;
     }
 
-    .info-cards {
-        grid-template-columns: repeat(2, 1fr);
+    .centered-section .section-divider {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .centered-section .section-title {
+        text-align: center;
+    }
+
+    .centered-section .section-text,
+    .centered-section .section-details,
+    .centered-section .info-useful-text {
+        text-align: left;
     }
 
     .gifts-text {
@@ -631,12 +708,12 @@ body {
     }
 
     .countdown-label {
-        font-size: 0.68rem;
+        font-size: 0.62rem;
         letter-spacing: 0.5px;
     }
 
     .section-content {
-        padding: 2rem 1.5rem;
+        padding: 1.3rem 1rem;
     }
 
     .section-title {
@@ -647,21 +724,25 @@ body {
         font-size: 1rem;
     }
 
+    .standalone-image-section .section-image {
+        height: 230px;
+    }
+
+    .confirm-banner-image {
+        height: 82px;
+    }
+
     .section-image-confirmacion img {
         transform: scaleY(1.18);
         transform-origin: center top;
     }
 
     .info-useful-section {
-        padding: 3rem 1.5rem;
+        padding: 0;
     }
 
-    .info-card {
-        padding: 1.5rem;
-    }
-
-    .info-card-title {
-        font-size: 1.3rem;
+    .info-useful-title {
+        font-size: 1.25rem;
     }
 
     .gifts-section {
