@@ -153,6 +153,23 @@ body {
     height: 340px;
 }
 
+.agenda-image-section {
+    background: var(--white);
+    display: flex;
+    justify-content: center;
+    padding: 0 1rem 1.5rem;
+}
+
+.agenda-image-wrapper {
+    width: min(100%, 920px);
+}
+
+.agenda-image-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
 .confirm-banner-section {
     background: var(--white);
     display: flex;
