@@ -97,19 +97,23 @@ body {
     left: 5%;
 }
 
-/* Selector VA | ES (dalt a la dreta sobre la portada) */
+/* Selector ES | VA (dalt a la dreta sobre la foto; dins .hero-image per alçada i z-index correctes en mòbil) */
 .lang-switch {
     position: absolute;
-    top: max(1rem, env(safe-area-inset-top));
-    right: max(1rem, env(safe-area-inset-right));
-    z-index: 10;
+    top: calc(1rem + env(safe-area-inset-top, 0px));
+    right: calc(1rem + env(safe-area-inset-right, 0px));
+    left: auto;
+    z-index: 5;
     display: flex;
     align-items: center;
     gap: 0.4rem;
+    width: max-content;
+    max-width: calc(100% - 2rem);
     font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
     font-size: 0.9rem;
     font-weight: 600;
     letter-spacing: 0.12em;
+    pointer-events: auto;
 }
 
 .lang-switch-link {
