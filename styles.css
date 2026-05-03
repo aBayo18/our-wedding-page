@@ -280,7 +280,7 @@ body {
     color: var(--light-text);
     line-height: 1.8;
     background: #f9f9f9;
-    padding: 1.5rem;
+    padding: 0.85rem 1.25rem;
     border-radius: 8px;
     border-left: 4px solid var(--primary-color);
 }
