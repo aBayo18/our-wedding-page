@@ -89,17 +89,30 @@ const copyBtn = document.getElementById('copyBtn');
 const ibanElement = document.getElementById('iban');
 const copyFeedback = document.getElementById('copyFeedback');
 
+function getCopyUiStrings() {
+    const lang = (document.documentElement.getAttribute('lang') || 'es').toLowerCase();
+    if (lang.startsWith('ca')) {
+        return {
+            success: '✓ IBAN copiat al porta-retalls',
+            error: "Error en copiar. Si us plau, copia manualment."
+        };
+    }
+    return {
+        success: '✓ IBAN copiado al portapapeles',
+        error: 'Error al copiar. Por favor, copia manualmente.'
+    };
+}
+
 if (copyBtn && ibanElement) {
     copyBtn.addEventListener('click', async () => {
         const ibanText = ibanElement.textContent.trim();
-        
+        const copyStrings = getCopyUiStrings();
+
         try {
-            // Intentar usar la API moderna del portapapeles
             if (navigator.clipboard && window.isSecureContext) {
                 await navigator.clipboard.writeText(ibanText.replace(/\s/g, ''));
-                showFeedback('✓ IBAN copiado al portapapeles');
+                showFeedback(copyStrings.success);
             } else {
-                // Fallback para navegadores más antiguos
                 const textArea = document.createElement('textarea');
                 textArea.value = ibanText.replace(/\s/g, '');
                 textArea.style.position = 'fixed';
@@ -108,10 +121,10 @@ if (copyBtn && ibanElement) {
                 textArea.select();
                 document.execCommand('copy');
                 document.body.removeChild(textArea);
-                showFeedback('✓ IBAN copiado al portapapeles');
+                showFeedback(copyStrings.success);
             }
         } catch (err) {
-            showFeedback('Error al copiar. Por favor, copia manualmente.');
+            showFeedback(copyStrings.error);
             console.error('Error al copiar:', err);
         }
     });
