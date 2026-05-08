@@ -563,6 +563,22 @@ body {
     gap: 0.75rem;
 }
 
+.footer-separator {
+    grid-column: 1 / -1;
+    width: 100%;
+    border-top: 1px solid rgba(139, 115, 85, 0.45);
+    margin: 0.15rem 0 0.1rem;
+}
+
+.footer-planner-message {
+    grid-column: 1 / -1;
+    font-size: 0.94rem;
+    line-height: 1.65;
+    color: var(--light-text);
+    margin: 0.2rem 0 0.35rem;
+    text-align: center;
+}
+
 .footer-contact {
     display: flex;
     align-items: center;
@@ -589,11 +605,25 @@ body {
     color: var(--secondary-color);
 }
 
+.footer-contact-description {
+    font-size: 0.92rem;
+    color: var(--light-text);
+}
+
 .footer-contact-phone {
     font-family: 'Arial', sans-serif;
     font-size: 0.95rem;
     letter-spacing: 0.3px;
     color: #4a4a4a;
+}
+
+.footer-contact--planner {
+    grid-column: 1 / -1;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    min-height: 88px;
+    gap: 0.25rem;
 }
 
 /* Responsive Design */
