@@ -1,16 +1,31 @@
 // ===== Pantalla de bienvenida (solo móviles) =====
 (function initWelcomeOverlay() {
     const welcomeOverlay = document.getElementById('welcome-overlay');
+    const tapIndicator = welcomeOverlay ? welcomeOverlay.querySelector('.welcome-tap-indicator') : null;
     const mobileQuery = window.matchMedia('(max-width: 768px)');
     const OPENING_DURATION_MS = 3350;
     const FADE_DURATION_MS = 780;
     const HIDE_DELAY_MS = OPENING_DURATION_MS - 360;
+    const TAP_INDICATOR_DELAY_MS = 7000;
+    let tapIndicatorTimeoutId = null;
 
     if (!welcomeOverlay || !mobileQuery.matches) return;
 
     document.body.classList.add('welcome-overlay-visible');
+    tapIndicatorTimeoutId = window.setTimeout(function showTapIndicator() {
+        if (tapIndicator) {
+            tapIndicator.classList.add('welcome-tap-indicator--visible');
+        }
+    }, TAP_INDICATOR_DELAY_MS);
 
     welcomeOverlay.addEventListener('click', function dismissOverlay() {
+        if (tapIndicatorTimeoutId !== null) {
+            window.clearTimeout(tapIndicatorTimeoutId);
+            tapIndicatorTimeoutId = null;
+        }
+        if (tapIndicator) {
+            tapIndicator.classList.remove('welcome-tap-indicator--visible');
+        }
         welcomeOverlay.classList.add('welcome-overlay--opening');
         setTimeout(function () {
             welcomeOverlay.classList.add('welcome-overlay--hiding');

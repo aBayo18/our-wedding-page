@@ -995,46 +995,35 @@ body {
     }
 
     .welcome-tap-indicator {
-        display: none;
+        display: grid;
         position: absolute;
-        right: 0.25rem;
-        bottom: 0.25rem;
+        left: 50%;
+        bottom: 1.1rem;
+        transform: translateX(-50%);
         place-items: center;
-        width: 3.1rem;
-        height: 3.1rem;
-        animation: tap-indicator-float 1.8s ease-in-out infinite;
+        width: 3.7rem;
+        height: 3.7rem;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.35s ease;
         pointer-events: none;
-        z-index: 6;
+        z-index: 10;
+    }
+
+    .welcome-tap-indicator--visible {
+        opacity: 1;
+        visibility: visible;
+        animation: tap-indicator-pulse 1.6s ease-in-out infinite;
     }
 
     .welcome-tap-indicator-icon {
         position: relative;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
+        display: block;
         transform-origin: 50% 90%;
         animation: tap-indicator-press 1.2s ease-in-out infinite;
-        width: 2.25rem;
-        height: 2.25rem;
-        font-size: 2.25rem;
-        line-height: 1;
-        color: #000;
-        font-family: "Segoe UI Symbol", "Noto Sans Symbols2", sans-serif;
-        font-variant-emoji: text;
-        filter: grayscale(1) contrast(1.15);
-    }
-
-    .welcome-tap-indicator-icon::after {
-        content: "";
-        position: absolute;
-        left: 50%;
-        top: 38%;
-        width: 1.4rem;
-        height: 1.4rem;
-        border: 2px solid rgba(0, 0, 0, 0.35);
-        border-radius: 50%;
-        transform: translate(-50%, -50%) scale(0.55);
-        animation: tap-indicator-ring 1.2s ease-out infinite;
+        width: 3.1rem;
+        height: 3.1rem;
+        object-fit: contain;
     }
 
     @keyframes welcome-hint-pulse {
@@ -1143,29 +1132,26 @@ body {
         }
     }
 
-    @keyframes tap-indicator-press {
+    @keyframes tap-indicator-pulse {
         0%, 100% {
-            transform: translateY(0) scale(1);
+            opacity: 0.9;
+            transform: translateX(-50%) scale(1);
         }
-        35% {
-            transform: translateY(2px) scale(0.92);
-        }
-        55% {
-            transform: translateY(0) scale(1);
+        50% {
+            opacity: 0.55;
+            transform: translateX(-50%) scale(0.94);
         }
     }
 
-    @keyframes tap-indicator-ring {
-        0% {
-            opacity: 0;
-            transform: translate(-50%, -50%) scale(0.5);
+    @keyframes tap-indicator-press {
+        0%, 100% {
+            transform: translateY(0) scaleX(-1) scale(1);
         }
-        25% {
-            opacity: 0.7;
+        35% {
+            transform: translateY(2px) scaleX(-1) scale(0.92);
         }
-        100% {
-            opacity: 0;
-            transform: translate(-50%, -50%) scale(1.38);
+        55% {
+            transform: translateY(0) scaleX(-1) scale(1);
         }
     }
 
